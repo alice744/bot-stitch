@@ -1,9 +1,10 @@
+require('dotenv').config();
 const TelrgramAPI = require('node-telegram-bot-api');
 const {buttonOptions, againButtonOptions} = require('./options.js');
 const sequelize = require('./db.js');
 const UserModel = require('./models.js')
 
-const token = '6783937369:AAHACVP1RY1zTNGGkWCkzuPi1MR5y3WFGco';
+const token = process.env.TG_TOKEN;
 
 const bot = new TelrgramAPI(token, { polling: true });
 
